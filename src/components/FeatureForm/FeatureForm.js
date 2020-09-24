@@ -12,6 +12,7 @@ export default class FeatureForm extends Component {
                 <Options 
                     features={this.props.features}
                     selected={this.props.selected}
+                    USCurrencyFormat={this.props.USCurrencyFormat}
                     updateFeature={this.props.updateFeature}
                 />
             </form>

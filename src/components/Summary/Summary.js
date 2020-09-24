@@ -9,8 +9,11 @@ export default class Summary extends Component {
         return (
             <section className="main__summary">
                 <h2>Your cart</h2>
-                <SummaryOptions selected={this.props.selected}/>
-                <Total selected={this.props.selected}/>                
+                <SummaryOptions selected={this.props.selected} />
+                <Total
+                    selected={this.props.selected}
+                    USCurrencyFormat={this.props.USCurrencyFormat}
+                />
             </section>
         )
     }

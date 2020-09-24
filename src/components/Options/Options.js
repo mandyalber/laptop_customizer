@@ -4,11 +4,6 @@ import './Options.css';
 // in both URLs and html attributes
 import slugify from 'slugify';
 
-const USCurrencyFormat = new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: 'USD'
-});
-
 export default class Options extends Component {
     
     render() {
@@ -28,7 +23,7 @@ export default class Options extends Component {
                             onChange={e => this.props.updateFeature(feature, item)}
                         />
                         <label htmlFor={itemHash} className="feature__label">
-                            {item.name} ({USCurrencyFormat.format(item.cost)})
+                            {item.name} ({this.props.USCurrencyFormat.format(item.cost)})
                         </label>
                     </div>
                 );

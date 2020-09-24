@@ -26,6 +26,11 @@ class App extends Component {
     }
   };
 
+  USCurrencyFormat = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD'
+  });
+
   updateFeature = (feature, newValue) => {
     const selected = Object.assign({}, this.state.selected);
     selected[feature] = newValue;
@@ -45,9 +50,11 @@ class App extends Component {
           <FeatureForm 
             features={this.props.features}
             selected={this.state.selected}
+            USCurrencyFormat={this.USCurrencyFormat}
             updateFeature={this.updateFeature}
           />
-          <Summary            
+          <Summary 
+            USCurrencyFormat={this.USCurrencyFormat}           
             selected={this.state.selected}
           />
         </main>
